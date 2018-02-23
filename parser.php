@@ -13,7 +13,7 @@
 
 
 
-	$id=(int)$_GET['id'];
+  $id=(int)$_GET['id'];
   $query="SELECT id, bezeichnung,filename,kategorie  FROM datei d WHERE  d.id=$id";
 
   $result = $pdo->query($query);

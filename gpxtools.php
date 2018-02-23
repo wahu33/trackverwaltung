@@ -177,8 +177,8 @@ Highcharts.chart('container', {
     }]
 
 });
+</script>
 
-	</script>
 <?php
 	include("footer.php");
 ?>

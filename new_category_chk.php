@@ -3,18 +3,17 @@
 
 
 
-  $strBezeichung    = mysql_real_escape_string($_POST['bezeichnung']);
-  $strPlural         = mysql_real_escape_string($_POST['plural']);
-  $strKommentar     = mysql_real_escape_string($_POST['kommentar']);
+  $strBezeichung    = $_POST['bezeichnung'];
+  $strPlural         = $_POST['plural'];
+  $strKommentar     = $_POST['kommentar'];
   $numSort          = (int)$_POST['sort'];
   $numPrivat        = (int)$_POST['privat'];
-
-
-
+  
   $strSQL = "insert into kategorie (bezeichnung, plural, kommentar, sort, privat)
-            values ('$strBezeichung','$strPlural','$strKommentar',$numSort,$numPrivat)";
+            values (:bezeichnung,:plural,:kommentar,$numSort,$numPrivat)";
 
-  $pdo->query($strSQL);
+  $sth = $pdo->prepare($strSQL);
+  $sth->execute(array(':bezeichnung'=>$strBezeichnung, ':plural'=>$strPlural, ';kommentar' => $strKommentar));
 
   //DEBUG:echo $strSQL;
 
