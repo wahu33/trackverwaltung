@@ -1,0 +1,63 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "01dbe25c62d3ee18dd0b54493456121e",
+    "content-hash": "11f454faef2b1eb7fce75240a85f4003",
+    "packages": [
+        {
+            "name": "sibyx/phpgpx",
+            "version": "1.0-RC3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sibyx/phpGPX.git",
+                "reference": "f72729eeb34046a96c1b0cb8a57c11164dde78f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sibyx/phpGPX/zipball/f72729eeb34046a96c1b0cb8a57c11164dde78f6",
+                "reference": "f72729eeb34046a96c1b0cb8a57c11164dde78f6",
+                "shasum": ""
+            },
+            "require": {
+                "lib-libxml": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "evert/phpdoc-md": "~0.2.0",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "phpGPX": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jakub Dubec",
+                    "email": "jakub.dubec@gmail.com",
+                    "homepage": "https://jakubdubec.me"
+                }
+            ],
+            "description": "A simple PHP library for GPX import/export",
+            "time": "2017-09-23 19:32:48"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "sibyx/phpgpx": 5
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

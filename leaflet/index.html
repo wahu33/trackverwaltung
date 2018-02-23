@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="leaflet.js"></script>
+    <script src="gpx.js"></script>
+    <link rel="stylesheet" href="leaflet.css" />
+  </head>
+  <body>
+    <div id="map" style="width: 1000px; height: 800px; border: 1px solid grey;"></div>
+    <script type="text/javascript">
+
+      var map = L.map('map').setView([51.68451, 7.80158], 15);
+      var mbUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      
+      L.tileLayer(mbUrl, {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+   
+     var gpx = 'https://home.bankerheide.de/gps/files/084ee3d9d1988f9c49776623fa9e09f7.gpx'; // URL to your GPX file or the GPX itself
+     new L.GPX(gpx, {async: true}).on('loaded', function(e) { map.fitBounds(e.target.getBounds()); }).addTo(map);
+
+      var marker = L.marker([51.68451, 7.80170]).bindPopup("Home").addTo(map);
+
+    </script>
+  </body>
+</html>
