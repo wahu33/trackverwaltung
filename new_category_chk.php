@@ -8,12 +8,13 @@
   $strKommentar     = $_POST['kommentar'];
   $numSort          = (int)$_POST['sort'];
   $numPrivat        = (int)$_POST['privat'];
-  
-  $strSQL = "insert into kategorie (bezeichnung, plural, kommentar, sort, privat)
-            values (:bezeichnung,:plural,:kommentar,$numSort,$numPrivat)";
 
-  $sth = $pdo->prepare($strSQL);
-  $sth->execute(array(':bezeichnung'=>$strBezeichnung, ':plural'=>$strPlural, ';kommentar' => $strKommentar));
+
+
+  $strSQL = "insert into kategorie (bezeichnung, plural, kommentar, sort, privat)
+            values ('$strBezeichung','$strPlural','$strKommentar',$numSort,$numPrivat)";
+
+  $pdo->query($strSQL);
 
   //DEBUG:echo $strSQL;
 

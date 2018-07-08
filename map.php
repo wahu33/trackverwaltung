@@ -48,7 +48,9 @@
     <strong>Datum:</strong> <?=$row['datum']?><br />
     <br />
     <a href="info.php?id=<?=$id?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Trackdetails</a><br>
-    <a href="profile.php?id=<?=$id?>"><i class="fa fa-area-chart" aria-hidden="true"></i> Höhenprofil</a>
+    <a href="profile.php?id=<?=$id?>"><i class="fa fa-area-chart" aria-hidden="true"></i> Höhenprofil</a><br>
+    <a href="gpx.php?id=<?=$id?>"><i class="fa fa-download" aria-hidden="true"></i> GPX Download</a><br>
+    
     <br><br>
     <a  class="btn btn-primary" href="list.php?kategorie=<?=$row['kategorie']?>">zurück</a><br />
     </div>

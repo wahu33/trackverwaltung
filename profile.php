@@ -16,14 +16,15 @@
 	if ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 		$kategorie=$row['kategorie'];
 		$strBezeichung=$row['bezeichnung'];
-		$numTrackCount = $row['trkpt_count'];
-    $numMod = $numTrackCount / 600;  // 600 Datenpunkte in der Darstellung
-		 $strSQL = "select dist,ele from tracks where track_id=$id";
-	   $stmt=$pdo->query($strSQL);
-	   $strData="[";
-		 $numCount=1;
-	   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-	     if ($numCount % $numMod == 0) {
+        $numTrackCount = $row['trkpt_count'];
+        $numMod = $numTrackCount / 600;  // 600 Datenpunkte in der Darstellung
+        if ($numMod<1) $numMod=1;
+		$strSQL = "select dist,ele from tracks where track_id=$id";
+	    $stmt=$pdo->query($strSQL);
+	    $strData="[";
+		$numCount=1;
+	    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+	        if ($numCount % $numMod == 0) {
 				 $strData .= "[".$row['dist'].",".$row['ele']."],";
 			 }
 			 $numCount++;
