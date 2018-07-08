@@ -28,16 +28,24 @@ alias composer="/path/to/composer.phar"
 
 ### Von Github clonen und Composer ausführen
 
-Zunächst die Quellen in das Dokumentroot des Webservers installieren:
+Zunächst die Quellen in das Dokumentroot des Webservers installieren und Composer ausführen. Anschließend wird noch ein Verzeichnis für die GPX-Dateien eingerichtet und der direkte Zugriff auf das Verzeichnis gesperrt, falls mod_rewrite installiert ist.
 
 ````
 git clone https://github.com/wahu33/trackverwaltung.git
 cd trackverwaltung
 composer install
 mkdir gpx-files
-chomod 777 gpx-files
+chmod 777 gpx-files
 cat "protected" > gpx-files/.htaccess
 cp config.default.php config.php
+````
+
+### Datenbank einrichten
+
+````
+mysqladmin create trackverwaltung
+mysql trackvewaltung < SQL/trackverwaltung.sql
+
 ````
 
 
