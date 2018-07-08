@@ -4,9 +4,9 @@ Geotracking-Datenbank
 
 Datenbank zur Speicherung und Kategorisierung von GPX-Tracks
 
-Version 0.2 - HTML5, PHP7
-Version 0.3 - Bootstrap, phpgpx (composer), Highchart
-Version 0.4 - Download von GPX-Dateien
+* Version 0.2 - HTML5, PHP7
+* Version 0.3 - Bootstrap, phpgpx (composer), Highchart
+* Version 0.4 - Download von GPX-Dateien
 
 Installation der GPX-Trackverwaltung
 -------
