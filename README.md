@@ -36,7 +36,7 @@ cd trackverwaltung
 composer install
 mkdir gpx-files
 chmod 777 gpx-files
-cat "protected" > gpx-files/.htaccess
+echo "protected" > gpx-files/.htaccess
 cp config.default.php config.php
 ````
 
@@ -64,10 +64,11 @@ mysql> use trackverwaltung;
 mysql> update user set password=password('NeuesPasswort') where user='admin';
 ``````
 
+### Nacharbeiten
+Sollte die Applikation im Internet betrieben werden, sollte man auch das Datenbankpasswort ändern.
 
 
-
-### Anmerkugnen 
+### Anmerkungen 
 
 Achtung: In HTML5 hat sich die CSS-Eigenschaft für height:100% geändert.
 Alle Vater-Container müssen auch mit height:100% ausgezeichnet werden:
