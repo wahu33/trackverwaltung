@@ -43,24 +43,36 @@ cp config.default.php config.php
 ### Datenbank einrichten
 
 ````
-mysqladmin create trackverwaltung
-mysql trackvewaltung < SQL/trackverwaltung.sql
-
+mysql -uroot -p
+mysql> CREATE DATABASE IF NOT EXISTS trackverwaltung;
+mysql> GRANT ALL ON trackverwaltung.* TO trackverwaltung@localhost IDENTIFIED BY "gpx-geheim";
+mysql> flush privileges;
+mysql> quit
+mysql -uroot -p trackverwaltung < SQL/trackverwaltung.sql
 ````
 
+Damit ist die Installation abgeschlossen. Unter http://example.com/trackvewaltung sollte die Applikation aufgerufen werden können.
+
+Das Login geschieht mit User ````admin```` und Passwort ````admin````.
+
+### Passwort ändern
+
+Es gibt noch keine Nutzervewaltung Passwörter können daher nur in der Datenbank direkt geändert werden, entweder über ````phpmyadmin```` oder direkt in der Datenbank.
+
+``````
+mysql> use trackverwaltung;
+mysql> update user set password=password('NeuesPasswort') where user='admin';
+``````
 
 
 
 
-
-
-
-
+### Anmerkugnen 
 
 Achtung: In HTML5 hat sich die CSS-Eigenschaft für height:100% geändert.
 Alle Vater-Container müssen auch mit height:100% ausgezeichnet werden:
 html, body : {height:100%}
 
-
+#### Verwendete Bibliothek
 
 * https://github.com/Sibyx/phpGPX
