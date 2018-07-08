@@ -48,6 +48,7 @@ cp config.default.php config.php
 
 
 
+
 Achtung: In HTML5 hat sich die CSS-Eigenschaft für height:100% geändert.
 Alle Vater-Container müssen auch mit height:100% ausgezeichnet werden:
 html, body : {height:100%}
