@@ -2,36 +2,20 @@
 /*
   config.php
 */
-$strTitle  = "GPS-Trackverwaltung";
+$strTitle  = "GPX-Trackverwaltung";
 $db_server = "localhost";
-$strServername=$_SERVER['SERVER_NAME'];
+$db_user   = "trackverwaltung";
+$db_passwd = "gpx-geheim";
+$db = "trackverwaltung";
+$strUploaddir = "/var/www/html/trackverwaltung/gpx-files/";
+$strFiledir   = "/var/www/html/trackverwaltung/files/";
 
-switch ($strServername) {
-  case 'localhost':
-        $db_user   = "root";
-        $db_passwd = "";
-        $db =  "gps";
-        $strUploaddir = "/var/www/html/gps/gpx-files/";
-        $strFiledir   = "/var/www/html/gps/files/";
-        break;
-  case 'www.example.com':
-        $db_user   = "track";
-        $db_passwd = "track";
-        $db = "track";
-        $strUploaddir = "/var/www/html/trackverwaltung/gpx-files/";
-        $strFiledir   = "/var/www/html/trackverwaltung/files/";
-        break;
-}
-
-if ($_SERVER['CONTEXT_DOCUMENT_ROOT']=="/Users/john/Sites") {
-  $strUploaddir = "/Users/john/Sites/trackverwaltung/gpx-files/";
-  $strFiledir   = "/Users/john/Sites/trackverwaltung/files/";
-}
 
 try {
    $pdo = new PDO('mysql:host=localhost;dbname='.$db.';charset=utf8mb4', $db_user, $db_passwd);
 } catch (PDOException $e) {echo $e->getMessage();  die();}
 
+// ----- Umrechnungsfunktion Sekunden zu Stunden  --------
 
 function toStd($sekunden)
 {
